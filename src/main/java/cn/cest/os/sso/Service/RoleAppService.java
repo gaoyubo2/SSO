@@ -1,6 +1,7 @@
 package cn.cest.os.sso.Service;
 
 import cn.cest.os.sso.pojo.RoleApp;
+import cn.cest.os.sso.pojo.dto.RoleAppIdDTO;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +14,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface RoleAppService extends IService<RoleApp> {
 
+    /**
+     * 添加角色应用权限
+     * @param roleAppIdDTO 角色信息、权限ID列表
+     * @return 添加标志
+     */
+    Boolean addRoleApp(RoleAppIdDTO roleAppIdDTO);
 }

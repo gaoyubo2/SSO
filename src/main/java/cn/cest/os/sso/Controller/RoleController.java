@@ -22,7 +22,7 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @PostMapping
+    @PostMapping("role")
     public Result<Integer> addRole(@RequestBody Role role){
         boolean flag = roleService.save(role);
         if(flag){
@@ -30,7 +30,7 @@ public class RoleController {
         }
         return Result.fail("添加角色失败");
     }
-    @GetMapping
+    @GetMapping("roles")
     public Result<List<Role>> getRoles(){
         List<Role> roles = roleService.list(null);
         if(roles != null){
@@ -38,7 +38,7 @@ public class RoleController {
         }
         return Result.fail("获取角色列表失败");
     }
-    @DeleteMapping
+    @DeleteMapping("role")
     public Result<Boolean> deleteRole(@RequestBody Role role){
         boolean flag = roleService.removeById(role);
         if(flag){
