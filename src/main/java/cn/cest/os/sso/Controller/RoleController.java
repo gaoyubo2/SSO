@@ -31,7 +31,22 @@ public class RoleController {
         return Result.fail("添加角色失败");
     }
     @GetMapping
-    public Result<List<Role>>
+    public Result<List<Role>> getRoles(){
+        List<Role> roles = roleService.list(null);
+        if(roles != null){
+            return Result.ok(roles,"获取角色列表成功");
+        }
+        return Result.fail("获取角色列表失败");
+    }
+    @DeleteMapping
+    public Result<Boolean> deleteRole(@RequestBody Role role){
+        boolean flag = roleService.removeById(role);
+        if(flag){
+            return Result.ok(true,"删除角色成功");
+        }
+        return Result.fail("删除角色失败");
+        //gyb
+    }
 
 
 }
