@@ -30,9 +30,9 @@ public class RoleController {
         }
         return Result.fail("添加角色失败");
     }
-    @GetMapping
-    public Result<List<Role>>
-    //test1 1543
+//    @GetMapping
+//    public Result<List<Role>>
+    //test1 15437
 
 }
 
